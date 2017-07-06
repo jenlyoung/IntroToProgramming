@@ -53,7 +53,7 @@ bio.display = function() {
 
         for (var s = 0; s < bio.skills.length; s++) {
             var formattedSkills = HTMLskills.replace('%data%', bio.skills[s]);
-            $('#header').append(formattedSkills)
+            $('#header').append(formattedSkills);
         }
     }
 };
@@ -116,7 +116,7 @@ education.display = function() {
             var formattedSchoolMajor = HTMLschoolMajor.replace('%data%', school.majors[m]);
             $('.education-entry:last').append(formattedSchoolMajor);
         }
-    };
+    }
     //the code below is for online education only
     for (var u = 0; u < education.onlineCourses.length; u++) {
         var online = education.onlineCourses[u];
