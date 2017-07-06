@@ -91,8 +91,6 @@ var education = {
         "url": "https://www.udacity.com/"
     }]
 };
-//used json.lint.com to validate that education is correct
-
 
 /**
  * @description Displays the education section
@@ -154,16 +152,15 @@ var work = {
         "title": "Colorado Conservation Trust Fellow",
         "location": "Brighton, CO",
         "dates": "February 2007 to June 2008",
-        "description": "Chosen to participate in Colorado Conseravtion Trust's Future Conservation Leaders Fellowship program."
+        "description": "Chosen to participate in Colorado Conservation Trust's Future Conservation Leaders Fellowship program."
     }, {
         "employer": "Colorado 18th Judicial District Court",
-        "title": "Judicial Law Cerk for the Honorable J.  Mark Hannen",
+        "title": "Judicial Law Clerk for the Honorable J. Mark Hannen",
         "location": "Centennial, CO",
         "dates": "August 2005 to November 2006",
-        "description": "Managed a docket consisting of over 300 cases."
+        "description": "Managed a docket of civil and criminal cases consisting of over 300 cases."
     }]
 };
-//validated json
 
 /**
  * @description Displays the work section
@@ -200,7 +197,7 @@ var projects = {
         "title": "HMTL Notes",
         "dates": "2017",
         "description": "HTML page that contains notes from the INDP.",
-        "images": ["Project1.jpg"]
+        "images": ["Project1.png"]
     }, {
         "title": "Jen's Notes--Styled ",
         "dates": "2017",
@@ -218,13 +215,11 @@ var projects = {
         "images": ["movieTrailer.png"]
     }]
 };
-//validated json
 
 /**
  * @description Displays the projects section
  */
 projects.display = function() {
-    // for (project in projects.projects) {
     for (var p = 0; p < projects.projects.length; p++) {
         var project = projects.projects[p];
 
