@@ -11,8 +11,8 @@ var bio = {
         "twitter": "@jenyoung",
         "location": "St. Louis, MO"
     },
-    "welcomeMsg": "Welcome to my resume! I am a Udacity student and I am currently learning Java Script. I hope to use my new skills to become a front-end developer.",
-    "skills": ["HTML", " CSS", " Python ", " Java Script"],
+    "welcomeMsg": "Welcome to my resume! I am a Udacity student and I am currently learning JavaScript. I hope to use my new skills to become a front-end developer.",
+    "skills": ["HTML", " CSS", " Python ", " JavaScript"],
     "biopic": "images/fry.jpg"
 };
 
@@ -69,25 +69,21 @@ var education = {
         "majors": ["Environmental and Natural Resources Law and Policy"],
         "dates": "May 2005",
         "url": "http://www.law.du.edu/"
-    },
-        {
-            "name": "Saint Louis University School of Law",
-            "location": "St. Louis, MO",
-            "degree": "J.D",
-            "majors": ["Law"],
-            "dates": "May 2004",
-            "url": "http://law.slu.edu/"
-
-        },
-        {
-            "name": "University of Missouri-St. Louis",
-            "location": "St. Louis, MO",
-            "degree": "B.A., English Literature",
-            "majors": ["English Literature", "Writing Certificate"],
-            "dates": "May 2000",
-            "url": "http://www.umsl.edu//"
-        }
-    ],
+    }, {
+        "name": "Saint Louis University School of Law",
+        "location": "St. Louis, MO",
+        "degree": "J.D",
+        "majors": ["Law"],
+        "dates": "May 2004",
+        "url": "http://law.slu.edu/"
+    }, {
+        "name": "University of Missouri-St. Louis",
+        "location": "St. Louis, MO",
+        "degree": "B.A., English Literature",
+        "majors": ["English Literature", "Writing Certificate"],
+        "dates": "May 2000",
+        "url": "http://www.umsl.edu//"
+    }],
     "onlineCourses": [{
         "title": "Introduction to Programming Nanodegree",
         "school": "Udacity",
@@ -153,22 +149,19 @@ var work = {
         "location": "Brighton, CO",
         "dates": "June 2008 to November 2009",
         "description": "Managed the Adams County Open Space Grant program, which distributes proceeds from a sales tax to qualifying jurisdictions for parks and open space programs."
-    },
-        {
-            "employer": "Adams County Parks and Community Resources",
-            "title": "Colorado Conservation Trust Fellow",
-            "location": "Brighton, CO",
-            "dates": "February 2007 to June 2008",
-            "description": "Chosen to participate in Colorado Conseravtion Trust's Future Conservation Leaders Fellowship program."
-        },
-        {
-            "employer": "Colorado 18th Judicial District Court",
-            "title": "Judicial Law Cerk for the Honorable J.  Mark Hannen",
-            "location": "Centennial, CO",
-            "dates": "August 2005 to November 2006",
-            "description": "Managed a docket consisting of over 300 cases."
-        }
-    ]
+    }, {
+        "employer": "Adams County Parks and Community Resources",
+        "title": "Colorado Conservation Trust Fellow",
+        "location": "Brighton, CO",
+        "dates": "February 2007 to June 2008",
+        "description": "Chosen to participate in Colorado Conseravtion Trust's Future Conservation Leaders Fellowship program."
+    }, {
+        "employer": "Colorado 18th Judicial District Court",
+        "title": "Judicial Law Cerk for the Honorable J.  Mark Hannen",
+        "location": "Centennial, CO",
+        "dates": "August 2005 to November 2006",
+        "description": "Managed a docket consisting of over 300 cases."
+    }]
 };
 //validated json
 
@@ -208,26 +201,22 @@ var projects = {
         "dates": "2017",
         "description": "HTML page that contains notes from the INDP.",
         "images": ["Project1.jpg"]
-    },
-        {
-            "title": "Jen's Notes--Styled ",
-            "dates": "2017",
-            "description": "HTML page from :Jen's Notes, styled with CSS.",
-            "images": ["HTML-CSS.png"]
-        },
-        {
-            "title": "Code Your Own quiz",
-            "dates": "2017",
-            "description": "Fill-in-the-blanks quiz using Python",
-            "images": ["Game.png"]
-        },
-        {
-            "title": "Movie Website",
-            "dates": "2017",
-            "description": "Website that displays movie posters, provides important information about the movies, and plays the movie trailer when clicked.",
-            "images": ["movieTrailer.png"]
-        }
-    ]
+    }, {
+        "title": "Jen's Notes--Styled ",
+        "dates": "2017",
+        "description": "HTML page from :Jen's Notes, styled with CSS.",
+        "images": ["HTML-CSS.png"]
+    }, {
+        "title": "Code Your Own quiz",
+        "dates": "2017",
+        "description": "Fill-in-the-blanks quiz using Python",
+        "images": ["Game.png"]
+    }, {
+        "title": "Movie Website",
+        "dates": "2017",
+        "description": "Website that displays movie posters, provides important information about the movies, and plays the movie trailer when clicked.",
+        "images": ["movieTrailer.png"]
+    }]
 };
 //validated json
 
