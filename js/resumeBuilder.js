@@ -4,17 +4,16 @@
 var bio = {
     "name": "Jennifer Young",
     "role": "Front-End Web Developer",
-    "contacts":
-        {
-            "mobile": "636.686.0812",
-            "email": "jen.l.young@gmail.com",
-            "github": "jenlyoung",
-            "twitter": "@jenyoung",
-            "location": "St. Louis, MO"
-        },
-    "welcomeMsg" : "Welcome to my resume! I am a Udacity student and I am currently learning Java Script. I hope to use my new skills to become a front-end developer.",
-    "skills" : ["HTML", " CSS", " Python ", " Java Script"],
-    "biopic" : "images/fry.jpg"
+    "contacts": {
+        "mobile": "636.686.0812",
+        "email": "jen.l.young@gmail.com",
+        "github": "jenlyoung",
+        "twitter": "@jenyoung",
+        "location": "St. Louis, MO"
+    },
+    "welcomeMsg": "Welcome to my resume! I am a Udacity student and I am currently learning Java Script. I hope to use my new skills to become a front-end developer.",
+    "skills": ["HTML", " CSS", " Python ", " Java Script"],
+    "biopic": "images/fry.jpg"
 };
 
 /**
@@ -63,15 +62,14 @@ bio.display = function() {
  * @description Contains the education information
  */
 var education = {
-    "schools": [
-        {
-            "name": "University of Denver Sturm College of Law",
-            "location": "Denver, CO",
-            "degree": "LL.M",
-            "majors": ["Environmental and Natural Resources Law and Policy"],
-            "dates": "May 2005",
-            "url": "http://www.law.du.edu/"
-        },
+    "schools": [{
+        "name": "University of Denver Sturm College of Law",
+        "location": "Denver, CO",
+        "degree": "LL.M",
+        "majors": ["Environmental and Natural Resources Law and Policy"],
+        "dates": "May 2005",
+        "url": "http://www.law.du.edu/"
+    },
         {
             "name": "Saint Louis University School of Law",
             "location": "St. Louis, MO",
@@ -90,14 +88,12 @@ var education = {
             "url": "http://www.umsl.edu//"
         }
     ],
-    "onlineCourses": [
-        {
-            "title": "Introduction to Programming Nanodegree",
-            "school": "Udacity",
-            "dates": "2017",
-            "url": "https://www.udacity.com/"
-        }
-    ]
+    "onlineCourses": [{
+        "title": "Introduction to Programming Nanodegree",
+        "school": "Udacity",
+        "dates": "2017",
+        "url": "https://www.udacity.com/"
+    }]
 };
 //used json.lint.com to validate that education is correct
 
@@ -105,8 +101,8 @@ var education = {
 /**
  * @description Displays the education section
  */
-education.display = function(){
-    for (var s = 0; s < education.schools.length; s++){
+education.display = function() {
+    for (var s = 0; s < education.schools.length; s++) {
         var school = education.schools[s];
 
         $('#education').append(HTMLschoolStart);
@@ -122,13 +118,13 @@ education.display = function(){
         var formattedSchoolLocation = HTMLschoolLocation.replace('%data%', school.location);
         $('.education-entry:last').append(formattedSchoolLocation);
 
-            for (var m = 0; m < school.majors.length; m++){
-                var formattedSchoolMajor = HTMLschoolMajor.replace('%data%',school.majors[m]);
-                $('.education-entry:last').append(formattedSchoolMajor);
-            }
+        for (var m = 0; m < school.majors.length; m++) {
+            var formattedSchoolMajor = HTMLschoolMajor.replace('%data%', school.majors[m]);
+            $('.education-entry:last').append(formattedSchoolMajor);
+        }
     };
-//the code below is for online education only
-    for (var u = 0; u < education.onlineCourses.length; u++){
+    //the code below is for online education only
+    for (var u = 0; u < education.onlineCourses.length; u++) {
         var online = education.onlineCourses[u];
 
         $('#education').append(HTMLonlineClasses);
@@ -151,14 +147,13 @@ education.display = function(){
  * @description Contains the work information
  */
 var work = {
-    "jobs": [
-        {
-            "employer": "Adams County Parks and Community Resources",
-            "title": "Open Space Program Manager",
-            "location": "Brighton, CO",
-            "dates": "June 2008 to November 2009",
-            "description": "Managed the Adams County Open Space Grant program, which distributes proceeds from a sales tax to qualifying jurisdictions for parks and open space programs."
-        },
+    "jobs": [{
+        "employer": "Adams County Parks and Community Resources",
+        "title": "Open Space Program Manager",
+        "location": "Brighton, CO",
+        "dates": "June 2008 to November 2009",
+        "description": "Managed the Adams County Open Space Grant program, which distributes proceeds from a sales tax to qualifying jurisdictions for parks and open space programs."
+    },
         {
             "employer": "Adams County Parks and Community Resources",
             "title": "Colorado Conservation Trust Fellow",
@@ -180,8 +175,8 @@ var work = {
 /**
  * @description Displays the work section
  */
-work.display = function(){
-    for (var j = 0; j < work.jobs.length; j++){
+work.display = function() {
+    for (var j = 0; j < work.jobs.length; j++) {
         var job = work.jobs[j];
 
         $('#workExperience').append(HTMLworkStart);
@@ -208,13 +203,12 @@ work.display = function(){
  * @description Contains the projects section
  */
 var projects = {
-    "projects": [
-        {
-            "title": "HMTL Notes",
-            "dates": "2017",
-            "description": "HTML page that contains notes from the INDP.",
-            "images": ["Project1.jpg"]
-        },
+    "projects": [{
+        "title": "HMTL Notes",
+        "dates": "2017",
+        "description": "HTML page that contains notes from the INDP.",
+        "images": ["Project1.jpg"]
+    },
         {
             "title": "Jen's Notes--Styled ",
             "dates": "2017",
@@ -240,9 +234,9 @@ var projects = {
 /**
  * @description Displays the projects section
  */
-projects.display = function(){
+projects.display = function() {
     // for (project in projects.projects) {
-    for (var p = 0; p < projects.projects.length; p++){
+    for (var p = 0; p < projects.projects.length; p++) {
         var project = projects.projects[p];
 
         $('#projects').append(HTMLprojectStart);
@@ -256,7 +250,7 @@ projects.display = function(){
         var formattedProjectDescription = HTMLprojectDescription.replace('%data%', project.description);
         $('.project-entry:last').append(formattedProjectDescription);
 
-        for (var i = 0; i < project.images.length; i++){
+        for (var i = 0; i < project.images.length; i++) {
             var formattedProjectImage = HTMLprojectImage.replace('%data%', project.images[i]);
             $('.project-entry:last').append(formattedProjectImage);
         }
@@ -273,11 +267,12 @@ $('#mapDiv').append(googleMap);
  * @description Changes bio name to international capitalization
  */
 $('#main').append(internationalizeButton);
+
 function inName(name) {
     name = name.trim().split(' ');
 
     name[1] = name[1].toUpperCase();
-    name[2] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
+    name[2] = name[0].slice(0, 1).toUpperCase() + name[0].slice(1).toLowerCase();
 
     return name[0] + ' ' + name[1];
 }
@@ -287,5 +282,3 @@ bio.display();
 education.display();
 work.display();
 projects.display();
-
-
