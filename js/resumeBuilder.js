@@ -11,7 +11,7 @@ var bio = {
         "twitter": "@jenyoung",
         "location": "St. Louis, MO"
     },
-    "welcomeMsg": "Welcome to my resume! I am a Udacity student and I am currently learning JavaScript. I hope to use my new skills to become a front-end developer.",
+    "welcomeMessage": "Welcome to my resume! I am a Udacity student and I am currently learning JavaScript. I hope to use my new skills to become a front-end developer.",
     "skills": ["HTML", " CSS", " Python ", " JavaScript"],
     "biopic": "images/fry.jpg"
 };
@@ -21,39 +21,25 @@ var bio = {
  */
 bio.display = function() {
     var formattedRole = HTMLheaderRole.replace('%data%', bio.role);
-    $('#header').prepend(formattedRole);
-
     var formattedName = HTMLheaderName.replace('%data%', bio.name);
-    $('#header').prepend(formattedName);
+    $('#header').prepend(formattedName, formattedRole);
 
     var formattedLocation = HTMLlocation.replace('%data%', bio.contacts.location);
-    $('#topContacts').prepend(formattedLocation);
-    $('#footerContacts').prepend(formattedLocation);
-
     var formattedGithub = HTMLgithub.replace('%data%', bio.contacts.github);
-    $('#topContacts').prepend(formattedGithub);
-    $('#footerContacts').prepend(formattedGithub);
-
     var formattedEmail = HTMLemail.replace('%data%', bio.contacts.email);
-    $('#topContacts').prepend(formattedEmail);
-    $('#footerContacts').prepend(formattedEmail);
-
     var formattedMobile = HTMLmobile.replace('%data%', bio.contacts.mobile);
-    $('#topContacts').prepend(formattedMobile);
-    $('#footerContacts').prepend(formattedMobile);
+    $('#topContacts, #footerContacts').prepend(formattedMobile, formattedEmail, formattedGithub, formattedLocation);
 
     var formattedBioPic = HTMLbioPic.replace('%data%', bio.biopic);
-    $('#header').append(formattedBioPic);
-
-    var formattedWelcomeMsg = HTMLwelcomeMsg.replace('%data%', bio.welcomeMsg);
-    $('#header').append(formattedWelcomeMsg);
+    var formattedWelcomeMsg = HTMLwelcomeMsg.replace('%data%', bio.welcomeMessage);
+    $('#header').append(formattedBioPic, formattedWelcomeMsg);
 
     if (bio.skills.length > 0) {
         $('#header').append(HTMLskillsStart);
 
         for (var s = 0; s < bio.skills.length; s++) {
             var formattedSkills = HTMLskills.replace('%data%', bio.skills[s]);
-            $('#header').append(formattedSkills);
+            $('#skills').append(formattedSkills);
         }
     }
 };
@@ -104,13 +90,13 @@ education.display = function() {
         var formattedSchoolName = HTMLschoolName.replace('%data%', school.name);
         var formattedSchoolDegree = HTMLschoolDegree.replace('%data%', school.degree);
         var formattedNameDegree = formattedSchoolName + formattedSchoolDegree;
-        $('.education-entry:last').append(formattedNameDegree);
+        // $('.education-entry:last').append();
 
         var formattedSchoolDates = HTMLschoolDates.replace('%data%', school.dates);
-        $('.education-entry:last').append(formattedSchoolDates);
+        // $('.education-entry:last').append(formattedSchoolDates);
 
         var formattedSchoolLocation = HTMLschoolLocation.replace('%data%', school.location);
-        $('.education-entry:last').append(formattedSchoolLocation);
+        $('.education-entry:last').append(formattedNameDegree, formattedSchoolDates ,formattedSchoolLocation);
 
         for (var m = 0; m < school.majors.length; m++) {
             var formattedSchoolMajor = HTMLschoolMajor.replace('%data%', school.majors[m]);
@@ -121,19 +107,18 @@ education.display = function() {
     for (var u = 0; u < education.onlineCourses.length; u++) {
         var online = education.onlineCourses[u];
 
-        $('#education').append(HTMLonlineClasses);
-        $('#education').append(HTMLschoolStart);
+        $('#education').append(HTMLonlineClasses, HTMLschoolStart);
 
         var formattedOnlineTitle = HTMLonlineTitle.replace('%data%', online.title);
         var formattedOnlineSchool = HTMLonlineSchool.replace('%data%', online.school);
         var formattedOnlineTitleSchool = formattedOnlineTitle + formattedOnlineSchool;
-        $('.education-entry:last').append(formattedOnlineTitleSchool);
+        // $('.education-entry:last').append(formattedOnlineTitleSchool);
 
         var formattedOnlineDates = HTMLonlineDates.replace('%data%', online.dates);
-        $('.education-entry:last').append(formattedOnlineDates);
+        // $('.education-entry:last').append(formattedOnlineDates);
 
         var formattedOnlineUrl = HTMLonlineURL.replace('%data%', online.url);
-        $('.education-entry:last').append(formattedOnlineUrl);
+        $('.education-entry:last').append(formattedOnlineTitleSchool, formattedOnlineDates, formattedOnlineUrl);
     }
 };
 
@@ -146,13 +131,13 @@ var work = {
         "title": "Open Space Program Manager",
         "location": "Brighton, CO",
         "dates": "June 2008 to November 2009",
-        "description": "Managed the Adams County Open Space Grant program, which distributes proceeds from a sales tax to qualifying jurisdictions for parks and open space programs."
+        "description": "Managed the Adams County Open Space Grant program, which distributes proceeds from a sales tax to qualifying jurisdictions for parks and open space projects."
     }, {
         "employer": "Adams County Parks and Community Resources",
         "title": "Colorado Conservation Trust Fellow",
         "location": "Brighton, CO",
         "dates": "February 2007 to June 2008",
-        "description": "Chosen to participate in Colorado Conservation Trust's Future Conservation Leaders Fellowship program."
+        "description": "Chosen to participate in Colorado Conservation Trust's Future Conservation Leaders Fellowship program. Served as project manager on two key open space acquisitions and wrote over $9 million in successful grant applications. "
     }, {
         "employer": "Colorado 18th Judicial District Court",
         "title": "Judicial Law Clerk for the Honorable J. Mark Hannen",
@@ -175,16 +160,16 @@ work.display = function() {
         var formattedTitle = HTMLworkTitle.replace('%data%', job.title);
         var formattedEmployerTitle = formattedEmployer + formattedTitle;
 
-        $('.work-entry:last').append(formattedEmployerTitle);
+        // $('.work-entry:last').append(formattedEmployerTitle);
 
         var formattedDates = HTMLworkDates.replace('%data%', job.dates);
-        $('.work-entry:last').append(formattedDates);
+        // $('.work-entry:last').append(formattedDates);
 
         var formattedLocation = HTMLworkLocation.replace('%data%', job.location);
-        $('.work-entry:last').append(formattedLocation);
+        // $('.work-entry:last').append(formattedLocation);
 
         var formattedDescription = HTMLworkDescription.replace('%data%', job.description);
-        $('.work-entry:last').append(formattedDescription);
+        $('.work-entry:last').append(formattedEmployerTitle, formattedDates, formattedLocation, formattedDescription);
 
     }
 };
@@ -194,24 +179,24 @@ work.display = function() {
  */
 var projects = {
     "projects": [{
-        "title": "HMTL Notes",
+        "title": "Getting Started with HTML",
         "dates": "2017",
-        "description": "HTML page that contains notes from the INDP.",
+        "description": "HTML page that contains notes from the Introduction to Programming Nanodegree.",
         "images": ["Project1.png"]
     }, {
-        "title": "Jen's Notes--Styled ",
+        "title": "Make a Web Page",
         "dates": "2017",
-        "description": "HTML page from :Jen's Notes, styled with CSS.",
+        "description": "A professional-looking web page using both HTML and CSS.",
         "images": ["HTML-CSS.png"]
     }, {
-        "title": "Code Your Own quiz",
+        "title": "Code Your Own Quiz",
         "dates": "2017",
-        "description": "Fill-in-the-blanks quiz using Python",
+        "description": "Fill-in-the-blanks quiz using Python.",
         "images": ["Game.png"]
     }, {
         "title": "Movie Website",
         "dates": "2017",
-        "description": "Website that displays movie posters, provides important information about the movies, and plays the movie trailer when clicked.",
+        "description": "Website that displays movie posters, provides important information about the movies, and plays the movie trailer when poster image is clicked.",
         "images": ["movieTrailer.png"]
     }]
 };
@@ -226,13 +211,9 @@ projects.display = function() {
         $('#projects').append(HTMLprojectStart);
 
         var formattedProjectTitle = HTMLprojectTitle.replace('%data%', project.title);
-        $('.project-entry:last').append(formattedProjectTitle);
-
         var formattedProjectDates = HTMLprojectDates.replace('%data%', project.dates);
-        $('.project-entry:last').append(formattedProjectDates);
-
         var formattedProjectDescription = HTMLprojectDescription.replace('%data%', project.description);
-        $('.project-entry:last').append(formattedProjectDescription);
+        $('.project-entry:last').append(formattedProjectTitle, formattedProjectDates, formattedProjectDescription);
 
         for (var i = 0; i < project.images.length; i++) {
             var formattedProjectImage = HTMLprojectImage.replace('%data%', project.images[i]);

@@ -177,13 +177,13 @@ span {
 @media only screen and (max-width: 1024px) {
   #lets-connect {
     margin-top: 5%;
-  };
+  }
 }
 
 @media only screen and (max-width:900px) {
   .biopic {
     width: 175px;
-  };
+  }
 }
 
 @media only screen and (max-width: 750px) {
@@ -197,7 +197,7 @@ span {
 
   .welcome-message {
     display: none;
-  };
+  }
 }
 /* The next two make the project pictures bigger with a slow transition when hover */
 
@@ -227,7 +227,7 @@ span {
   #skills-h3,
   .biopic {
     display: block;
-  };
+  }
 }
 
 /* The following code creates the navbar */
